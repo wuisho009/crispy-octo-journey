@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora en JavaScript</title>
+    <style>
+      :root {
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #f3f4f6;
+      }
+
+      .calculator {
+        width: min(92vw, 320px);
+        background: #111827;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .display {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.8rem;
+        text-align: right;
+        background: #e5e7eb;
+        box-sizing: border-box;
+      }
+
+      .keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      button {
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+
+      .operator {
+        background: #f59e0b;
+        color: #fff;
+      }
+
+      .equals {
+        background: #10b981;
+        color: #fff;
+        grid-column: span 2;
+      }
+
+      .clear {
+        background: #ef4444;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="calculator">
+      <input id="display" class="display" type="text" readonly value="0" />
+      <section class="keys" aria-label="Teclas de calculadora">
+        <button class="clear" data-action="clear">C</button>
+        <button data-action="delete">⌫</button>
+        <button class="operator" data-value="/">÷</button>
+        <button class="operator" data-value="*">×</button>
+
+        <button data-value="7">7</button>
+        <button data-value="8">8</button>
+        <button data-value="9">9</button>
+        <button class="operator" data-value="-">−</button>
+
+        <button data-value="4">4</button>
+        <button data-value="5">5</button>
+        <button data-value="6">6</button>
+        <button class="operator" data-value="+">+</button>
+
+        <button data-value="1">1</button>
+        <button data-value="2">2</button>
+        <button data-value="3">3</button>
+        <button data-value=".">.</button>
+
+        <button data-value="0">0</button>
+        <button class="equals" data-action="calculate">=</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
